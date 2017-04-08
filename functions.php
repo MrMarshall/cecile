@@ -15,7 +15,9 @@ add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 
 <?php
 
-//Remove 'Project type: ' from title
+/*
+*Remove 'Project type: ' from title
+*/
  
 function jeroen_is_gek( $title ) {
 	// Remove any HTML, words, digits, and spaces before the title.
@@ -23,4 +25,5 @@ function jeroen_is_gek( $title ) {
 }
 
 add_filter( 'get_the_archive_title', 'jeroen_is_gek' );
+
 ?>

@@ -27,6 +27,11 @@ get_header(); ?>
 
 			endwhile; // End of the loop. ?>
 		</div><!-- #primary -->
+		<?php
+		if ( $layout_class == 'sidebar-right' ):
+			get_sidebar();
+		endif;
+		?>
 	</div>
 <?php
 get_footer();
