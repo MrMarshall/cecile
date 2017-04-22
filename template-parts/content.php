@@ -16,7 +16,7 @@ $left_side   = get_theme_mod( 'post_author_left_side', false );
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('post-content post-grid-wide'); ?>>
 
-<!-- make single image smaller on large screens --!>
+<!-- make single image smaller on large screens -->
 <div class="col-md-8 col-md-offset-2 xs-12">
 
 	<header class="entry-header nolist">
@@ -29,8 +29,12 @@ $left_side   = get_theme_mod( 'post_author_left_side', false );
 			if ( $layout == 'full-width' ) {
 				$size = 'shapely-full';
 			}
-			$size = 'shapely-full';
-			$image = the_post_thumbnail('full');
+			else {
+			//Default single archive page has layout class 'sidebar-right'
+				$size = 'large';
+			}
+
+			$image = the_post_thumbnail($size);
 
 		$allowed_tags = array(
 			'img'      => array(
@@ -128,7 +132,7 @@ $left_side   = get_theme_mod( 'post_author_left_side', false );
 
 ?><!-- Close offset -->
 </div>
-<!-- small offset (but bigger) for related articles on large screen --!>
+<!-- small offset (but bigger) for related articles on large screen -->
 <!-- <div class="col-md-10 col-md-offset-1 xs-12"> TEMPORARILY DELETED UNTIL RELATED ARTICLES FIXED-->
 <?php
 		if ( $enable_tags ):
@@ -138,9 +142,9 @@ $left_side   = get_theme_mod( 'post_author_left_side', false );
 		endif;
 		?>
 
-		<?php 
+		<?php
 /* Related articles should show similar project types. Disabled until fixed. */
-			/* Related articles */		
+			/* Related articles */
 			#do_action( 'shapely_single_after_article' );
 		?>
 
