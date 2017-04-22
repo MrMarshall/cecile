@@ -29,7 +29,8 @@ $left_side   = get_theme_mod( 'post_author_left_side', false );
 			if ( $layout == 'full-width' ) {
 				$size = 'shapely-full';
 			}
-			$image = get_the_post_thumbnail( get_the_ID(), $size );
+			$size = 'shapely-full';
+			$image = the_post_thumbnail('full');
 
 		$allowed_tags = array(
 			'img'      => array(

@@ -31,6 +31,10 @@ section, footer {
     margin-top: -40px;
 }
 
+li {
+  color: #8c979e;
+}
+
 div.wpcf7 {
 }
 
@@ -82,7 +86,6 @@ label {
 .modalDialog:target {
 	opacity:1;
 	pointer-events: auto;
-
 }
 
 .modalDialog > div {
@@ -118,8 +121,13 @@ label {
 
 .close:hover { background: #00d9ff; }
 
-.closeSurrounding:target  {
-    height: 100%;
-    width: 100%;
-    position: absolute;
+a.closeSurrounding {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+@media (max-width: 767px) {
+br {
+  display: inherit;
 }
