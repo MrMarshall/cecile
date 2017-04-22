@@ -10,14 +10,16 @@
 get_header(); ?>
 <?php $layout_class = shapely_get_layout_class(); ?>
 	<div class="row">
-		<?php
-		if ( $layout_class == 'sidebar-left' ):
-			get_sidebar();
-		endif;
-		?>
-		<div id="primary" class="col-md-8 mb-xs-24 <?php echo esc_attr( $layout_class ); ?>"><?php
-			while ( have_posts() ) : the_post();
 
+		<?php
+		/*if ( $layout_class == 'sidebar-left' ):
+		*	get_sidebar();
+		* endif; */
+		?>
+
+		<div id="primary" class="col-md-12 xs-12<?php echo esc_attr( $layout_class ); ?>">
+		<?php
+			while ( have_posts() ) : the_post();
 				get_template_part( 'template-parts/content' );
 
 				// If comments are open or we have at least one comment, load up the comment template.
@@ -26,11 +28,12 @@ get_header(); ?>
 				endif;
 
 			endwhile; // End of the loop. ?>
+		</div>
 		</div><!-- #primary -->
 		<?php
-		if ( $layout_class == 'sidebar-right' ):
-			get_sidebar();
-		endif;
+		/* if ( $layout_class == 'sidebar-right' ):
+		*	get_sidebar();
+		* endif; */
 		?>
 	</div>
 <?php
